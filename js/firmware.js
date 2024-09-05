@@ -62,8 +62,6 @@ const FIRMWARE_CONFIGS = {
     revEdSzMin: [1, 0, 1, 1, 3], //revE dual silver Z min
     svv4zmxgt: [1, 0, 0, 0, 3], //revE Silver.V4,Zmax Geeetech
     sv4zmxv1: [1, 0, 0, 0, 1], //silver v4 zmax viki 1
-
-
   };
   
   const FIRMWARE_URLS = {
