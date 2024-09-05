@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MakerGear M2 Firmware Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <header class="bg-dark text-white py-3">
+        <div class="container">
+            <h1 class="text-center">MakerGear Firmware</h1>
+        </div>
+        <!-- <div id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#">M2</a>
+            <a href="#">M3</a>
+            <a href="#">Ultra One</a>
+            <a href="#">Micro</a>
+        </div> -->
+    </header>
+
+    <main class="container my-5">
+        
+        <section id="firmware-selector" class="mb-5">
+            <div id="firmware-selector" class="container mt-5">
+                <h2 class="text-center mb-4">M2 Firmware Selector</h2>
+                
+                <!-- Progress Bar -->
+                <div class="progress mb-4">
+                    <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">Step 1 of 5</div>
+                </div>
+
+                <div id="selector-steps">
+                  <!-- Step 1: Z-motor -->
+                  <div id="step-1" class="selector-step">
+                    <h3 class="text-center">Step 1: Select your Z-motor</h3>
+                    <div class="row justify-content-center">
+                      <div class="col-md-6 text-center">
+                        <img src="images/z_motor_comparison.jpg" alt="Z-motor comparison" class="img-fluid mb-3" data-zoomed="images/z_motor_comparison.jpg">
+                        <div class="btn-group" role="group" aria-label="Z-motor selection">
+                          <button type="button" class="btn btn-outline-primary" data-value="black">Black Z Motor</button>
+                          <button type="button" class="btn btn-outline-primary" data-value="silver">Silver Z Motor</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <!-- Step 2: Power Supply -->
+                  <div id="step-2" class="selector-step" style="display: none;">
+                    <h3 class="text-center">Step 2: Confirm Power Supply</h3>
+                    <div class="row justify-content-center">
+                      <div class="col-md-6 text-center">
+                        <img src="images/24v_power_supply.jpg" alt="24V Power Supply" class="img-fluid mb-3" data-zoomed="images/24v_power_supply_lg.jpg">
+                        <p>24V Power Supply</p>
+                        <p class="text-muted">If you have a 19V supply, please contact <a href="mailto:support@makergear.com">support@makergear.com</a></p>
+                        <button type="button" class="btn btn-primary" data-value="24v">Confirm 24V</button>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <!-- Step 3: Z-endstop position -->
+                  <div id="step-3" class="selector-step" style="display: none;">
+                    <h3 class="text-center">Step 3: Select Z-endstop position</h3>
+                    <div class="row justify-content-center">
+                      <div class="col-md-5 text-center">
+                        <img src="images/z_max.jpg" alt="Z max (bottom)" class="img-fluid mb-3" data-zoomed="images/z_max_lg.jpg">
+                        <button type="button" class="btn btn-outline-primary" data-value="zmax">Zmax (bottom)</button>
+                      </div>
+                      <div class="col-md-5 text-center">
+                        <img src="images/z_min.jpg" alt="Z min (top)" class="img-fluid mb-3" data-zoomed="images/zmin_lg.jpg">
+                        <button type="button" class="btn btn-outline-primary" data-value="zmin">Zmin (top)</button>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <!-- Step 4: Hotend -->
+                  <div id="step-4" class="selector-step" style="display: none;">
+                    <h3 class="text-center">Step 4: Select your Hotend</h3>
+                    <div class="row justify-content-center">
+                      <div class="col-md-4 text-center">
+                        <img src="images/v4_lg.jpg" alt="V4 Hotend" class="img-fluid mb-3" data-zoomed="images/v4_lg.jpg">
+                        <button type="button" class="btn btn-outline-primary" data-value="v4">V4 Hotend</button>
+                      </div>
+                      <div class="col-md-4 text-center">
+                        <img src="images/v4_lg.jpg" alt="V4 Hotend (Dual)" class="img-fluid mb-3" data-zoomed="images/v4_lg.jpg">
+                        <button type="button" class="btn btn-outline-primary" data-value="v4dual">V4 Hotend (Dual)</button>
+                      </div>
+                      <div class="col-md-4 text-center">
+                        <img src="images/v3b_lg.jpg" alt="V3B Hotend" class="img-fluid mb-3" data-zoomed="images/v3b_lg.jpg">
+                        <button type="button" class="btn btn-outline-primary" data-value="v3b">V3B Hotend</button>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <!-- Step 5: LCD -->
+                  <div id="step-5" class="selector-step" style="display: none;">
+                    <h3 class="text-center">Step 5: Select your LCD</h3>
+                    <div class="row justify-content-center">
+                      <div class="col-md-3 text-center">
+                        <button type="button" class="btn btn-outline-primary mb-3" data-value="none">No LCD</button>
+                      </div>
+                      <div class="col-md-3 text-center">
+                        <img src="images/viki_1.jpg" alt="Viki 1 LCD" class="img-fluid mb-3" data-zoomed="images/viki_1.jpg">
+                        <button type="button" class="btn btn-outline-primary" data-value="viki1">Viki 1</button>
+                      </div>
+                      <div class="col-md-3 text-center">
+                        <img src="images/viki2.jpg" alt="Viki 2 LCD" class="img-fluid mb-3" data-zoomed="images/viki2.jpg">
+                        <button type="button" class="btn btn-outline-primary" data-value="viki2">Viki 2</button>
+                      </div>
+                      <div class="col-md-3 text-center">
+                        <img src="images/geeetech.jpg" alt="Geeetech LCD" class="img-fluid mb-3" data-zoomed="images/Geeetech.jpg">
+                        <button type="button" class="btn btn-outline-primary" data-value="geeetech">Geeetech</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              
+                <!-- Navigation buttons -->
+                <div class="row justify-content-center mt-4">
+                  <div class="col-md-2 text-center">
+                    <button id="prev-step" class="btn btn-secondary" style="display: none;">&larr; Previous</button>
+                  </div>
+                  <div class="col-md-2 text-center">
+                    <button id="next-step" class="btn btn-primary">Next &rarr;</button>
+                  </div>
+                </div>
+              </div>
+        </section>
+
+        <section id="download-section" class="mb-5">
+            <h2>Download Firmware</h2>
+            <div id="download-info"></div>
+            <button id="download-btn" class="btn btn-primary" style="display: none;">Download Firmware</button>
+        </section>
+
+        <section id="instructions" class="mb-5">
+            <h2>Installation Instructions</h2>
+            <!-- Add step-by-step instructions -->
+        </section>
+    </main>
+
+    <footer class="bg-light py-3">
+        <div class="container text-center">
+            <p>&copy; 2024 MakerGear. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/firmware.js"></script>
+</body>
+</html>
