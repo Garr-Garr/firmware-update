@@ -2,20 +2,20 @@
 
 /* Override Bootstrap's default colors */
 :root {
-  --primary: #007bff;
+  --primary: #ff7f35;
   --secondary: #6c757d;
   --success: #28a745;
   --info: #17a2b8;
   --warning: #ffc107;
   --danger: #dc3545;
   --light: #f8f9fa;
-  --dark: #343a40;
+  --dark: #1b1f23;
 }
 
 /* Custom colors for MakerGear */
 :root {
-  --makergear-blue: #0077be;
-  --makergear-dark: #1a1a1a;
+  --makergear-orange: #ff7f35;
+  --makergear-dark: #1b1f23;
   --makergear-light: #f0f0f0;
 }
 
@@ -31,29 +31,70 @@ body {
   background-color: var(--makergear-dark) !important;
 }
 
-/* Button styles */
-.btn-primary {
-  background-color: var(--makergear-blue);
-  border-color: var(--makergear-blue);
+/* Firmware Selector Buttons */
+.selector-step .btn-outline-primary {
+  color: #ff7f35 !important;
+  border-color: #ff7f35 !important;
+  background-color: transparent !important;
 }
 
-.btn-primary:hover {
-  background-color: darken(var(--makergear-blue), 10%);
-  border-color: darken(var(--makergear-blue), 10%);
+.selector-step .btn-outline-primary:hover,
+.selector-step .btn-outline-primary:focus {
+  color: #ffffff !important;
+  background-color: #ff7f35 !important;
+  border-color: #ff7f35 !important;
 }
 
-/* Progress bar styles */
+.selector-step .btn-outline-primary:active,
+.selector-step .btn-outline-primary.active,
+.selector-step .btn-outline-primary.show {
+  color: #ffffff !important;
+  background-color: #ff7f35 !important;
+  border-color: #ff7f35 !important;
+}
+
+#prev-step,
+#next-step {
+  background-color: #ff7f35 !important;
+  border-color: #ff7f35 !important;
+  color: #ffffff !important;
+}
+
+#prev-step:hover,
+#next-step:hover {
+  background-color: #e66a20 !important;
+  border-color: #e66a20 !important;
+}
+
+/* Progress bar */
 .progress-bar {
-  background-color: var(--makergear-blue);
+  background-color: #ff7f35 !important;
+}
+
+/* Override Bootstrap's focus styles */
+.selector-step .btn-check:focus + .btn-outline-primary, 
+.selector-step .btn-outline-primary:focus {
+  box-shadow: 0 0 0 0.25rem rgba(255, 127, 53, 0.5) !important;
+}
+
+/* Override Bootstrap's active styles */
+.selector-step .btn-check:checked + .btn-outline-primary, 
+.selector-step .btn-check:active + .btn-outline-primary, 
+.selector-step .btn-outline-primary:active, 
+.selector-step .btn-outline-primary.active, 
+.selector-step .btn-outline-primary.dropdown-toggle.show {
+  color: #ffffff !important;
+  background-color: #ff7f35 !important;
+  border-color: #ff7f35 !important;
 }
 
 /* Card styles */
 .card {
-  border-color: var(--makergear-blue);
+  border-color: var(--makergear-orange);
 }
 
 .card-header {
-  background-color: var(--makergear-blue);
+  background-color: var(--makergear-orange);
   color: white;
 }
 
@@ -124,7 +165,7 @@ body {
 }
 
 .sidebar a:hover {
-  color: var(--makergear-blue);
+  color: var(--makergear-orange);
 }
 
 .sidebar .closebtn {
