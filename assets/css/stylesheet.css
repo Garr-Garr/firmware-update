@@ -1,0 +1,146 @@
+/* Custom Bootstrap Stylesheet */
+
+/* Override Bootstrap's default colors */
+:root {
+  --primary: #007bff;
+  --secondary: #6c757d;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #343a40;
+}
+
+/* Custom colors for MakerGear */
+:root {
+  --makergear-blue: #0077be;
+  --makergear-dark: #1a1a1a;
+  --makergear-light: #f0f0f0;
+}
+
+/* Body styles */
+body {
+  background-color: var(--makergear-light);
+  color: var(--makergear-dark);
+  font-family: 'Arial', sans-serif;
+}
+
+/* Header styles */
+.bg-dark {
+  background-color: var(--makergear-dark) !important;
+}
+
+/* Button styles */
+.btn-primary {
+  background-color: var(--makergear-blue);
+  border-color: var(--makergear-blue);
+}
+
+.btn-primary:hover {
+  background-color: darken(var(--makergear-blue), 10%);
+  border-color: darken(var(--makergear-blue), 10%);
+}
+
+/* Progress bar styles */
+.progress-bar {
+  background-color: var(--makergear-blue);
+}
+
+/* Card styles */
+.card {
+  border-color: var(--makergear-blue);
+}
+
+.card-header {
+  background-color: var(--makergear-blue);
+  color: white;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  .btn-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .btn-group .btn {
+    margin-bottom: 10px;
+  }
+
+  .col-md-3, .col-md-4, .col-md-5, .col-md-6 {
+    margin-bottom: 20px;
+  }
+}
+
+/* Image zoom styles */
+.img-fluid {
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.img-fluid:hover {
+  transform: scale(1.05);
+}
+
+/* Sidebar styles */
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: var(--makergear-dark);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: var(--makergear-light);
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: var(--makergear-blue);
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
