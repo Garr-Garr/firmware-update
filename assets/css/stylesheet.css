@@ -19,6 +19,10 @@
   --makergear-light: #f0f0f0;
 }
 
+.makergear-orange-text {
+  color: var(--makergear-orange);
+}
+
 /* Body styles */
 body {
   background-color: var(--makergear-light);
@@ -29,6 +33,28 @@ body {
 /* Header styles */
 .bg-dark {
   background-color: var(--makergear-dark) !important;
+}
+
+/* Ensure the title stands out against the dark background */
+.bg-dark .makergear-orange-text {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Video Guide styles */
+.video-guide-container {
+  width: 100%;
+}
+
+.video-guide {
+  width: 100%;
+  max-width: 600px;
+  height: 350px;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Firmware Selector Buttons */
