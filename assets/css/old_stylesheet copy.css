@@ -1,8 +1,7 @@
-/* MakerGear Custom Stylesheet */
+/* Custom Bootstrap Stylesheet */
 
-/* ===== Custom Color Variables ===== */
+/* Override Bootstrap's default colors */
 :root {
-  /* Bootstrap color overrides */
   --primary: #ff7f35;
   --secondary: #6c757d;
   --success: #28a745;
@@ -11,36 +10,35 @@
   --danger: #dc3545;
   --light: #f8f9fa;
   --dark: #1b1f23;
+}
 
-  /* MakerGear specific colors */
+/* Custom colors for MakerGear */
+:root {
   --makergear-orange: #ff7f35;
   --makergear-dark: #1b1f23;
   --makergear-light: #f0f0f0;
-}
-
-/* ===== Global Styles ===== */
-body {
-  background-color: var(--makergear-light);
-  color: var(--makergear-dark);
-  font-family: 'Arial', sans-serif;
 }
 
 .makergear-orange-text {
   color: var(--makergear-orange);
 }
 
-/* ===== Header Styles ===== */
+/* Body styles */
+body {
+  background-color: var(--makergear-light);
+  color: var(--makergear-dark);
+  font-family: 'Arial', sans-serif;
+}
+
+/* Header styles */
 .bg-dark {
   background-color: var(--makergear-dark) !important;
 }
 
-.bg-dark .makergear-orange-text {
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
-}
+/* Add these styles to your existing CSS */
 
-/* ===== Navigation Styles ===== */
 .navbar-nav .nav-link {
-  color: var(--makergear-orange);
+  color: var(--makergear-light);
 }
 
 .navbar-nav .nav-link:hover {
@@ -61,7 +59,6 @@ body {
   color: var(--makergear-dark);
 }
 
-/* Scroll Navigation */
 .scroll-nav {
   position: fixed;
   top: 20px;
@@ -73,13 +70,6 @@ body {
 .scroll-nav .btn {
   background-color: var(--makergear-orange);
   border-color: var(--makergear-orange);
-  width: 60px;  /* Increased button size */
-  height: 60px;  /* Increased button size */
-  border-radius: 50%;  /* Makes the button circular */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0;  /* Remove default padding */
 }
 
 .scroll-nav .btn:hover {
@@ -87,47 +77,148 @@ body {
   border-color: var(--makergear-orange);
 }
 
-/* Hamburger Icon */
-.scroll-nav .btn i {
-  font-size: 30px;
-  color: white;
-}
-
-/* Off-canvas Navigation */
 .offcanvas {
   background-color: var(--makergear-dark);
   color: var(--makergear-light);
-  width: 50%;
-}
-
-/* Backdrop Opacity */
-.offcanvas-backdrop.show {
-  opacity: 0.2; /* Change the opacity to 0.2 */
 }
 
 .offcanvas .btn-close {
   filter: invert(1) grayscale(100%) brightness(200%);
 }
 
-/* Offcanvas Text Color */
-.offcanvas-body .nav-link,
-.offcanvas-header .offcanvas-title {
-  color: var(--makergear-orange); /* Change text color to makergear-orange */
+/* Ensure the title stands out against the dark background */
+.bg-dark .makergear-orange-text {
+  text-shadow: 2px 5px 2px rgba(0, 0, 0, 0.3);
 }
 
-/* Dropdown items in offcanvas */
-.offcanvas-body .dropdown-item {
-  color: var(--makergear-orange);
+/* Video Guide styles */
+.video-guide-container {
+  width: 100%;
 }
 
-/* Hover state for nav links and dropdown items */
-.offcanvas-body .nav-link:hover,
-.offcanvas-body .dropdown-item:hover {
-  color: var(--makergear-dark);
-  background-color: var(--makergear-light);
+.video-guide {
+  width: 100%;
+  max-width: 600px;
+  height: 350px;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Sidebar Navigation */
+/* Firmware Selector Buttons */
+.selector-step .btn-outline-primary {
+  color: #ff7f35 !important;
+  border-color: #ff7f35 !important;
+  background-color: transparent !important;
+}
+
+.selector-step .btn-outline-primary:hover,
+.selector-step .btn-outline-primary:focus {
+  color: #ffffff !important;
+  background-color: #ff7f35 !important;
+  border-color: #ff7f35 !important;
+}
+
+.selector-step .btn-outline-primary:active,
+.selector-step .btn-outline-primary.active,
+.selector-step .btn-outline-primary.show {
+  color: #ffffff !important;
+  background-color: #ff7f35 !important;
+  border-color: #ff7f35 !important;
+}
+
+#prev-step,
+#next-step {
+  background-color: #ff7f35 !important;
+  border-color: #ff7f35 !important;
+  color: #ffffff !important;
+}
+
+#prev-step:hover,
+#next-step:hover {
+  background-color: #e66a20 !important;
+  border-color: #e66a20 !important;
+}
+
+/* Progress bar */
+.progress-bar {
+  background-color: #ff7f35 !important;
+}
+
+/* Override Bootstrap's focus styles */
+.selector-step .btn-check:focus + .btn-outline-primary, 
+.selector-step .btn-outline-primary:focus {
+  box-shadow: 0 0 0 0.25rem rgba(255, 127, 53, 0.5) !important;
+}
+
+/* Override Bootstrap's active styles */
+.selector-step .btn-check:checked + .btn-outline-primary, 
+.selector-step .btn-check:active + .btn-outline-primary, 
+.selector-step .btn-outline-primary:active, 
+.selector-step .btn-outline-primary.active, 
+.selector-step .btn-outline-primary.dropdown-toggle.show {
+  color: #ffffff !important;
+  background-color: #ff7f35 !important;
+  border-color: #ff7f35 !important;
+}
+
+/* Card styles */
+.card {
+  border-color: var(--makergear-orange);
+}
+
+.card-header {
+  background-color: var(--makergear-orange);
+  color: white;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  .btn-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .btn-group .btn {
+    margin-bottom: 10px;
+  }
+
+  .col-md-3, .col-md-4, .col-md-5, .col-md-6 {
+    margin-bottom: 20px;
+  }
+}
+
+/* Image zoom styles */
+.img-fluid {
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.img-fluid:hover {
+  transform: scale(1.05);
+}
+
+/* Sidebar styles */
 .sidebar {
   height: 100%;
   width: 0;
@@ -167,123 +258,7 @@ body {
   padding: 16px;
 }
 
-/* ===== Component Styles ===== */
-/* Video Guide */
-.video-guide-container {
-  width: 100%;
-}
-
-.video-guide {
-  width: 100%;
-  max-width: 600px;
-  height: 350px;
-  background-color: #f0f0f0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Firmware Selector Buttons */
-.selector-step .btn-outline-primary {
-  color: #ff7f35 !important;
-  border-color: #ff7f35 !important;
-  background-color: transparent !important;
-}
-
-.selector-step .btn-outline-primary:hover,
-.selector-step .btn-outline-primary:focus,
-.selector-step .btn-outline-primary:active,
-.selector-step .btn-outline-primary.active,
-.selector-step .btn-outline-primary.show {
-  color: #ffffff !important;
-  background-color: #ff7f35 !important;
-  border-color: #ff7f35 !important;
-}
-
-#prev-step,
-#next-step {
-  background-color: #ff7f35 !important;
-  border-color: #ff7f35 !important;
-  color: #ffffff !important;
-}
-
-#prev-step:hover,
-#next-step:hover {
-  background-color: #e66a20 !important;
-  border-color: #e66a20 !important;
-}
-
-/* Progress Bar */
-.progress-bar {
-  background-color: #ff7f35 !important;
-}
-
-/* Cards */
-.card {
-  border-color: var(--makergear-orange);
-}
-
-.card-header {
-  background-color: var(--makergear-orange);
-  color: white;
-}
-
-/* Image Zoom */
-.img-fluid {
-  transition: transform 0.3s ease-in-out;
-  cursor: pointer;
-}
-
-.img-fluid:hover {
-  transform: scale(1.05);
-}
-
-/* ===== Utility Classes ===== */
-/* Focus Styles */
-.selector-step .btn-check:focus + .btn-outline-primary, 
-.selector-step .btn-outline-primary:focus {
-  box-shadow: 0 0 0 0.25rem rgba(255, 127, 53, 0.5) !important;
-}
-
-/* Active Styles */
-.selector-step .btn-check:checked + .btn-outline-primary, 
-.selector-step .btn-check:active + .btn-outline-primary, 
-.selector-step .btn-outline-primary:active, 
-.selector-step .btn-outline-primary.active, 
-.selector-step .btn-outline-primary.dropdown-toggle.show {
-  color: #ffffff !important;
-  background-color: #ff7f35 !important;
-  border-color: #ff7f35 !important;
-}
-
-/* ===== Media Queries ===== */
-@media (max-width: 768px) {
-  .container {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-
-  h1 { font-size: 2rem; }
-  h2 { font-size: 1.5rem; }
-  h3 { font-size: 1.25rem; }
-
-  .btn-group {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .btn-group .btn {
-    margin-bottom: 10px;
-  }
-
-  .col-md-3, .col-md-4, .col-md-5, .col-md-6 {
-    margin-bottom: 20px;
-  }
-}
-
 @media screen and (max-height: 450px) {
-  .sidebar { padding-top: 15px; }
-  .sidebar a { font-size: 18px; }
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
 }

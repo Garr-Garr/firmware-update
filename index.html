@@ -3,37 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MakerGear M2 Firmware Page</title>
+    <title>MakerGear Firmware</title>
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="/assets/css/stylesheet.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <header class="bg-dark text-white py-3">
-        <div class="container">
-            <h1 class="text-center makergear-orange-text ">MakerGear Firmware</h1>
+  <header class="bg-dark text-white py-3">
+    <div class="container d-flex justify-content-between align-items-center">
+      <h1 id="makergear-firmware" class="makergear-orange-text">MakerGear Firmware</h1>
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="m2Dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                M2
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="m2Dropdown">
+                <li><a class="dropdown-item" href="#">Simple</a></li>
+                <li><a class="dropdown-item" href="#">Advanced</a></li>
+                <li><a class="dropdown-item" href="#">Marlin 2 (Beta)</a></li>
+                <li><a class="dropdown-item" href="#">Klipper</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">M3</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">U1</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Micro</a>
+            </li>
+          </ul>
         </div>
-        <!-- <div id="mySidebar" class="sidebar">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="#">M2</a>
-            <a href="#">M3</a>
-            <a href="#">Ultra One</a>
-            <a href="#">Micro</a>
-        </div> -->
-    </header>
+      </nav>
+    </div>
+  </header>
+  
+  <div id="scrollNav" class="scroll-nav">
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNav" aria-controls="offcanvasNav">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+  
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNav" aria-labelledby="offcanvasNavLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasNavLabel">Navigation</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="nav flex-column">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="m2DropdownOffcanvas" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            M2
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="m2DropdownOffcanvas">
+            <li><a class="dropdown-item" href="#">Basic</a></li>
+            <li><a class="dropdown-item" href="#">Advanced</a></li>
+            <li><a class="dropdown-item" href="#">Beta</a></li>
+            <li><a class="dropdown-item" href="#">Klipper</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">M3</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">U1</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Micro</a>
+        </li>
+      </ul>
+    </div>
+  </div>
 
     <main class="container my-5">
+  
       <div class="video-guide-container d-flex justify-content-center align-items-center mb-5">
         <div class="video-guide" style="max-width: 800px; height: 450px; background-color: #f0f0f0; display: flex; justify-content: center; align-items: center;">
           <iframe width="100%" height="100%" src="https://www.youtube.com/embed/vCKDJlZKubA?si=mG_zw7VQBg6NedhX" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>        </div>
       </div>
       
-      
-      
-      
-      <!-- <div class="section mb-3 justify-content-center">
-            <h2>Video Guide (coming soon)</h2>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/vCKDJlZKubA?si=mG_zw7VQBg6NedhX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div> -->
         <div id="firmware-selector" class="section mb-5">
           <div class="container mt-5">
             <h2 id="m2-firmware-selector" class="text-center mb-4">M2 Firmware Selector</h2>
@@ -135,12 +189,6 @@
           </div>
         </div>
 
-        <!-- <section id="download-section" class="mb-5">
-            <h2>Download Firmware</h2>
-            <div id="download-info"></div>
-            <button id="download-btn" class="btn btn-primary" style="display: none;">Download Firmware</button>
-        </section> -->
-
         <section id="instructions" class="mb-5">
             <h2>Installation Instructions</h2>
             <!-- Add step-by-step instructions -->
@@ -154,6 +202,7 @@
     </footer>
 
     <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
     <script src="/assets/js/firmware.js"></script>
 </body>
 </html>

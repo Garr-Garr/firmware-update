@@ -312,6 +312,62 @@ function closeNav() {
     document.getElementById("main").style.marginLeft = "0";
 }
   
+document.addEventListener('DOMContentLoaded', function() {
+  const header = document.querySelector('header');
+  const scrollNav = document.getElementById('scrollNav');
+  const offcanvasNav = document.getElementById('offcanvasNav');
+  
+  var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'))
+  var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
+    return new bootstrap.Dropdown(dropdownToggleEl)
+  });
+
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > header.offsetHeight) {
+      scrollNav.style.display = 'block';
+    } else {
+      scrollNav.style.display = 'none';
+    }
+  });
+
+  // Create a Bootstrap Offcanvas instance
+  const bsOffcanvas = new bootstrap.Offcanvas(offcanvasNav);
+
+  // Function to reset body styles and classes
+  function resetBodyScroll() {
+    document.body.classList.remove('modal-open');
+    document.body.style.overflow = '';
+    document.body.style.paddingRight = '';
+  }
+
+  // Event listener for when the offcanvas is hidden
+  offcanvasNav.addEventListener('hidden.bs.offcanvas', function () {
+    resetBodyScroll();
+  });
+
+  // Event listener for when the offcanvas is about to be hidden
+  offcanvasNav.addEventListener('hide.bs.offcanvas', function () {
+    // Remove the backdrop immediately
+    const backdrop = document.querySelector('.offcanvas-backdrop');
+    if (backdrop) {
+      backdrop.remove();
+    }
+  });
+
+  // Event delegation for closing the offcanvas when clicking outside
+  document.body.addEventListener('click', function(event) {
+    if (!offcanvasNav.contains(event.target) && !event.target.closest('.scroll-nav')) {
+      bsOffcanvas.hide();
+    }
+  });
+
+  // Fallback to ensure scrolling is reset even if the hidden event doesn't fire
+  window.addEventListener('resize', function() {
+    if (!offcanvasNav.classList.contains('show')) {
+      resetBodyScroll();
+    }
+  });
+});
 //   // Image magnification (using a library, make sure to include the library in your HTML)
 //   document.addEventListener('DOMContentLoaded', () => {
 //     $(".zoom1").elevateZoom({ zoomWindowPosition: 10 });
