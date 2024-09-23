@@ -80,9 +80,9 @@
       </ul>
     </div>
   </div>
-
+    
     <main class="container my-5">
-  
+      <p class="container py-3 justify-content-center">Coming soon</p>
       <div class="video-guide-container d-flex justify-content-center align-items-center mb-5">
         <div class="video-guide" style="max-width: 800px; height: 450px; background-color: #f0f0f0; display: flex; justify-content: center; align-items: center;">
           <iframe width="100%" height="100%" src="https://www.youtube.com/embed/vCKDJlZKubA?si=mG_zw7VQBg6NedhX" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>        </div>
@@ -191,7 +191,15 @@
 
         <section id="instructions" class="mb-5">
             <h2>Installation Instructions</h2>
-            <!-- Add step-by-step instructions -->
+            <p>Users can download the firmware .hex file for their machine's hardware configuration and then (easily!) upload the firmware to their M2 printer using PrusaSlicer over USB connection. The .hex file within the /Firmware/Builds/ directory of each firmware branch.</p>
+            <ul>
+              <li>To flash the firmware into your printer, connect the RAMBo board to your computer using the square-shaped USB-B 2.0 cable.</li>
+                <ul>(The printer must be on)</ul>
+              <li>Download firmware from the selector above</li>
+              <li>Open PrusaSlicer, click on the 'Configuration' menu, and select 'Flash printer firmware'</li>
+              <li>Click on the Browse button and choose the .hex file</li>
+              <li>Click Flash! and let the procedure complete</li>
+            </ul>
         </section>
     </main>
 
