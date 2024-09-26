@@ -220,7 +220,12 @@ const FIRMWARE_CONFIGS = {
     };
   
     if (await confirm(`Please click to download ${type.toUpperCase()} firmware.`)) {
-      window.location = urls[type];
+      const link = document.createElement('a');
+      link.href = urls[type];
+      link.download = `${type}_firmware.hex`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     }
   };
   const downloadPrusaSlicer = async () => {
