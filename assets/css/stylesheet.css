@@ -272,10 +272,16 @@ body {
 
 /* Progress Bar */
 .progress-bar {
-  background-color: #ff7f35 !important;
+  background-color: var(--makergear-orange);
   color: var(--makergear-dark) !important;
   font-size: medium;
   text-align: center;
+  font-size: 14px; /* Increase font size */
+  font-weight: bold; /* Make text bold */
+  text-align: center;
+  line-height: 30px; /* Center text vertically */
+  position: relative; /* For absolute positioning of text */
+  transition: width 0.3s ease; /* Smooth transition for width changes */
 }
 
 /* Cards */

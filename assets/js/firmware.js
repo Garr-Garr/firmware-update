@@ -182,6 +182,7 @@ const FIRMWARE_CONFIGS = {
 
       if (currentStep < selectorSteps.length - 1) {
         showStep(currentStep + 1);
+        console.log('User selections:', userSelections);
       } else if (currentStep === selectorSteps.length - 1) {
         // If it's the last step, trigger the matchConfig function
         matchConfig();
@@ -190,18 +191,14 @@ const FIRMWARE_CONFIGS = {
   }
 
   function handleNavigation(event) {
-    if (event.target === prevButton && currentStep > 0) {
-      showStep(currentStep - 1);
-    } else if (event.target === nextButton) {
-      if (currentStep < selectorSteps.length - 1) {
-        showStep(currentStep + 1);
-      }
-      // Finish button clicked
-      console.log('User selections:', userSelections);
-      matchConfig();
-      
-    }
+  if (event.target === prevButton && currentStep > 0) {
+    showStep(currentStep - 1);
+    console.log('User selections:', userSelections);
+  } else if (event.target === nextButton && currentStep < selectorSteps.length - 1) {
+    showStep(currentStep + 1);
+    console.log('User selections:', userSelections);
   }
+}
 
   // Set up event listeners for the new selector
   const firmwareSelector = document.getElementById('firmware-selector');
