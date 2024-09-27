@@ -288,7 +288,7 @@ const matchConfig = () => {
     const getUserConfig = () => {
       return [
         userSelections['step-1'] === 'silver' ? 1 : 0,
-        0, // Assuming 24V power supply
+        userSelections['step-2'] === '19v' ? 0 : 1,
         userSelections['step-3'] === 'zmin' ? 1 : 0,
         userSelections['step-4'] === 'v4' ? 0 : userSelections['step-4'] === 'v4dual' ? 1 : 2,
         userSelections['step-5'] === 'none' ? 0 : userSelections['step-5'] === 'viki1' ? 1 : userSelections['step-5'] === 'viki2' ? 2 : 3
