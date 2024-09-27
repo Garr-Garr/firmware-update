@@ -82,11 +82,13 @@
   </div>
     
     <main class="container my-5">
-      <p class="container py-3 justify-content-center">Coming soon</p>
+      <div class="firmware-selector-container">
+      
+      <!-- <div class="col align-self-center">Coming soon</div>
       <div class="video-guide-container d-flex justify-content-center align-items-center mb-5">
         <div class="video-guide" style="max-width: 800px; height: 450px; background-color: #f0f0f0; display: flex; justify-content: center; align-items: center;">
           <iframe width="100%" height="100%" src="https://www.youtube.com/embed/vCKDJlZKubA?si=mG_zw7VQBg6NedhX" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>        </div>
-      </div>
+      </div> -->
       
         <div id="firmware-selector" class="section mb-5">
           <div class="container mt-5">
@@ -113,19 +115,21 @@
               </div>
         
               <div id="step-2" class="selector-step" style="display: none;">
-                <h3 class="text-center">Step 2: Confirm Power Supply</h3>
+                <h3 class="text-center">Select your Power Supply</h3>
                 <div class="row justify-content-center">
-                  <div class="col-md-6 text-center">
+                  <div class="col-md-5 text-center">
+                    <img src="assets/images/12and19volt_M2_power_supply-removebg-preview.png" class="img-fluid mb-3" data-zoomed="assets/images/12and19volt_M2_power_supply-removebg-preview.png" alt="19V Power Supply">
+                    <button type="button" class="btn btn-outline-primary" data-value="19v">12v and 19v</button>
+                  </div>
+                  <div class="col-md-5 text-center">
                     <img src="assets/images/24v_power_supply.jpg" class="img-fluid mb-3" data-zoomed="assets/images/24v_power_supply_lg.jpg" alt="24V Power Supply">
-                    <p>24V Power Supply</p>
-                    <p>If you have a 19V supply, please contact <a href="mailto:support@makergear.com">support@makergear.com</a></p>
-                    <button type="button" class="btn btn-outline-primary" data-value="24v">Confirm 24V</button>
+                    <button type="button" class="btn btn-outline-primary" data-value="24v">24volt (single unit)</button>
                   </div>
                 </div>
               </div>
         
               <div id="step-3" class="selector-step" style="display: none;">
-                <h3 class="text-center">Step 3: Select Z-endstop position</h3>
+                <h3 class="text-center">Select your Z-endstop position</h3>
                 <div class="row justify-content-center">
                   <div class="col-md-5 text-center">
                     <img src="assets/images/z_max.jpg" class="img-fluid mb-3" data-zoomed="assets/images/z_max_lg.jpg" alt="Z max (bottom)">
@@ -139,7 +143,7 @@
               </div>
         
               <div id="step-4" class="selector-step" style="display: none;">
-                <h3 class="text-center">Step 4: Select your Hotend</h3>
+                <h3 class="text-center">Select your Hotend</h3>
                 <div class="row justify-content-center">
                   <div class="col-md-4 text-center">
                     <img src="assets/images/v4_lg.jpg" class="img-fluid mb-3" data-zoomed="assets/images/v4_lg.jpg" alt="V4 Hotend">
@@ -160,6 +164,7 @@
                 <h3 class="text-center">Step 5: Select your LCD</h3>
                 <div class="row justify-content-center">
                   <div class="col-md-3 text-center">
+                    <img src="assets/images/sd_card.jpg" class="img-fluid mb-3" data-zoomed="assets/images/sd_card.jpg" alt="SD Card">
                     <button type="button" class="btn btn-outline-primary" data-value="none">No LCD</button>
                   </div>
                   <div class="col-md-3 text-center">
@@ -201,6 +206,7 @@
               <li>Click Flash! and let the procedure complete</li>
             </ul>
         </section>
+      </div>
     </main>
 
     <footer class="bg-light py-3">

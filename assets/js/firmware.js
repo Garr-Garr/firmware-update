@@ -150,7 +150,8 @@ const FIRMWARE_CONFIGS = {
       step.style.display = index === stepIndex ? 'block' : 'none';
     });
     prevButton.style.display = stepIndex > 0 ? 'inline-block' : 'none';
-    nextButton.textContent = stepIndex === selectorSteps.length - 1 ? 'Finish' : 'Next →';
+    nextButton.style.display = stepIndex < selectorSteps.length - 1 ? 'inline-block' : 'none';
+    nextButton.textContent = 'Next →';
     currentStep = stepIndex;
     updateProgressBar(stepIndex);
   }
@@ -166,8 +167,24 @@ const FIRMWARE_CONFIGS = {
       step.querySelectorAll('button').forEach(btn => btn.classList.remove('btn-primary'));
       event.target.classList.add('btn-primary');
 
+      // Check for 19V power supply selection
+      if (stepId === 'step-2' && value === '19v') {
+        alert("If you have a 19V supply, please contact support@makergear.com");
+        // Reset selection
+        const nextButton = document.getElementById('next-step');
+        if (nextButton) {
+          nextButton.remove();
+        }
+        // Reset selection
+        delete userSelections[stepId];
+        return;
+      }
+
       if (currentStep < selectorSteps.length - 1) {
         showStep(currentStep + 1);
+      } else if (currentStep === selectorSteps.length - 1) {
+        // If it's the last step, trigger the matchConfig function
+        matchConfig();
       }
     }
   }
@@ -178,11 +195,11 @@ const FIRMWARE_CONFIGS = {
     } else if (event.target === nextButton) {
       if (currentStep < selectorSteps.length - 1) {
         showStep(currentStep + 1);
-      } else {
-        // Finish button clicked
-        console.log('User selections:', userSelections);
-        matchConfig();
       }
+      // Finish button clicked
+      console.log('User selections:', userSelections);
+      matchConfig();
+      
     }
   }
 
